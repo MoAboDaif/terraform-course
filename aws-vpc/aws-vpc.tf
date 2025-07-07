@@ -25,7 +25,7 @@ resource "aws_subnet" "Public-subnet-01" {
   availability_zone = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch = true
   tags = {
-    Name = "${aws_vpc.main-vpc.tags.Name}_Public Subnet 01"
+    Name = "${aws_vpc.main-vpc.tags.Name} Public Subnet 01"
     Environment = "Learning"
     Terraform = "true"
   }
@@ -36,7 +36,7 @@ resource "aws_subnet" "Public-subnet-02" {
   availability_zone = data.aws_availability_zones.available.names[1]
   map_public_ip_on_launch = true
   tags = {
-    Name = "${aws_vpc.main-vpc.tags.Name}_Public Subnet 02"
+    Name = "${aws_vpc.main-vpc.tags.Name} Public Subnet 02"
     Environment = "Learning"
     Terraform = "true"
   }
@@ -47,7 +47,7 @@ resource "aws_subnet" "Public-subnet-03" {
   availability_zone = data.aws_availability_zones.available.names[2]
   map_public_ip_on_launch = true
   tags = {
-    Name = "${aws_vpc.main-vpc.tags.Name}_Public Subnet 03"
+    Name = "${aws_vpc.main-vpc.tags.Name} Public Subnet 03"
     Environment = "Learning"
     Terraform = "true"
   }
@@ -58,7 +58,7 @@ resource "aws_subnet" "Private-subnet-01" {
   availability_zone = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch = false
   tags = {
-    Name = "${aws_vpc.main-vpc.tags.Name}_Private Subnet 01"
+    Name = "${aws_vpc.main-vpc.tags.Name} Private Subnet 01"
     Environment = "Learning"
     Terraform = "true"
   }
@@ -69,7 +69,7 @@ resource "aws_subnet" "Private-subnet-02" {
   availability_zone = data.aws_availability_zones.available.names[1]
   map_public_ip_on_launch = false
   tags = {
-    Name = "${aws_vpc.main-vpc.tags.Name}_Private Subnet 02"
+    Name = "${aws_vpc.main-vpc.tags.Name} Private Subnet 02"
     Environment = "Learning"
     Terraform = "true"
   }
@@ -80,7 +80,7 @@ resource "aws_subnet" "Private-subnet-03" {
   availability_zone = data.aws_availability_zones.available.names[2]
   map_public_ip_on_launch = false
   tags = {
-    Name = "${aws_vpc.main-vpc.tags.Name}_Private Subnet 03"
+    Name = "${aws_vpc.main-vpc.tags.Name} Private Subnet 03"
     Environment = "Learning"
     Terraform = "true"
   }
