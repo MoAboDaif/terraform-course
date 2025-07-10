@@ -105,5 +105,19 @@ resource "aws_route_table_association" "Public-subnet-03-assoc" {
   route_table_id = aws_route_table.Public-rtb.id
 }
 data "aws_availability_zones" "available" {
+  all_availability_zones = false
   state = "available"
+}
+data "aws_region" "current" {}
+output "region_id" {
+  value = data.aws_region.current.id
+}
+output "region_az_id" {
+  value = "${data.aws_region.current.id}a"
+}
+output "az_id"  {
+  value = try(data.aws_availability_zones.available.zone_ids[3], data.aws_availability_zones.available.zone_ids[2])
+}
+output "az_name"  {
+  value = try(data.aws_availability_zones.available.names[3], data.aws_availability_zones.available.names[2])
 }
