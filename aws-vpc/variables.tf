@@ -17,3 +17,10 @@ variable "vpc_config" {
     error_message = "only one public subnet can be created in each availability zone, \nPlease adjust the public_subnet_count accordingly."
   }
 }
+variable "ec2_instance_config" {
+  type = map(object({
+    type = string
+    ami  = string
+    nvme = optional(string, "gp3")
+  }))
+}

@@ -14,7 +14,7 @@ locals {
         vpc_name          = vpc_name
         vpc_index         = index(keys(var.vpc_config), vpc_name)
         subnet_num        = private_subnet_index
-        availability_zone = data.aws_availability_zones.available.names[private_subnet_index % length(data.aws_availability_zones.available.names)]
+        availability_zone_id = data.aws_availability_zones.available.zone_ids[private_subnet_index % length(data.aws_availability_zones.available.zone_ids)]
         cidr_block        = "10.${index(keys(var.vpc_config), vpc_name)}.${private_subnet_index + 100}.0/24"
       }
     ]
@@ -25,7 +25,7 @@ locals {
         vpc_name          = vpc_name
         vpc_index         = index(keys(var.vpc_config), vpc_name)
         subnet_num        = public_subnet_index
-        availability_zone = data.aws_availability_zones.available.names[public_subnet_index % length(data.aws_availability_zones.available.names)]
+        availability_zone_id = data.aws_availability_zones.available.zone_ids[public_subnet_index % length(data.aws_availability_zones.available.zone_ids)]
         cidr_block        = "10.${index(keys(var.vpc_config), vpc_name)}.${public_subnet_index}.0/24"
       }
     ]
