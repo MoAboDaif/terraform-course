@@ -11,10 +11,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "moabodaif-terraform-bucket"
-    key            = "terraform-course/aws-vpc/terraform.tfstate"
-    region         = "eu-central-1"
-    encrypt        = true
+    bucket  = "moabodaif-terraform-bucket"
+    key     = "terraform-course/aws-vpc/terraform.tfstate"
+    region  = "eu-central-1"
+    encrypt = true
   }
 }
 provider "aws" {
