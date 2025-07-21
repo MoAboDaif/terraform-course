@@ -1,0 +1,12 @@
+users:
+  - name: mohamed
+    roles:
+      - admin
+      - devops
+      - cloud-architect
+  - name: abodaif
+    roles:
+      - network-admin
+      - sys-admin
+  - name: moabodaif
+    roles: [network-admin, cloud-architect]

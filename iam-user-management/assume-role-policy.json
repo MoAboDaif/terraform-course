@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Principal": {
+              "AWS": [
+                "arn:aws:iam::533267447870:user/users/admin-user",
+                "arn:aws:iam::533267447870:user/MoAboDaif"
+              ]
+            },
+            "Condition": {}
+        }
+    ]
+}
