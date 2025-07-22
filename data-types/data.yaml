@@ -4,9 +4,26 @@ users:
       - admin
       - devops
       - cloud-architect
+
   - name: abodaif
     roles:
       - network-admin
       - sys-admin
+
   - name: moabodaif
     roles: [network-admin, cloud-architect]
+
+  - name: duplicate
+    roles:
+      - admin
+      - devops
+
+  - name: repeated
+    roles:
+      - devops
+      - devops
+
+  # Duplicate role entry but with different key order
+  - roles:
+      - new-role
+    name: new-user

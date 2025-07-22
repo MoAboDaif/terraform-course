@@ -1,14 +1,16 @@
 locals {
   yaml-data = yamldecode(file("${path.module}/data.yaml"))
-  users-data = {for users in local.yaml-data.users : users.name => users.roles }
-  roles-data = {for user in local.yaml-data :  user.roles => }
+  role-list = distinct(flatten([for p in local.yaml-data.users : p.roles]))
+  role-data = { for role in local.role-list : role => [for pair in local.yaml-data.users : pair.name if contains(pair.roles, role)] }
+  user-list = distinct(flatten([for p in local.yaml-data.users : p.name]))
+  user-data = { for pair in local.yaml-data.users : pair.name => pair.roles }
 }
 output "yaml-data" {
   value = local.yaml-data
 }
 output "users-data" {
-  value = local.users-data
+  value = local.user-list
 }
 output "roles-data" {
-  value = local.roles-data
+  value = local.role-list
 }
