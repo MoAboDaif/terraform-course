@@ -1,5 +1,6 @@
 # Created by https://gitignore.org
 # Terraform.gitignore
+generated.config
 
 # Local .terraform directories
 .terraform/
