@@ -1,14 +1,21 @@
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = ">= 3.0"
+  version = "~> 6.0"
 
-  name = "${var.cluster_name}-vpc"
+  name = "${terraform.workspace}-${var.cluster_name}-vpc"
   cidr = var.vpc_cidr
 
   azs             = data.aws_availability_zones.available.names
-  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  private_subnets = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
+  public_subnets  = var.public_subnets
+  private_subnets = var.private_subnets
 
   enable_nat_gateway = true
   single_nat_gateway = true
+
+  tags = merge(
+    var.tags,
+    {
+      workspace = terraform.workspace
+    }
+  )
 }
