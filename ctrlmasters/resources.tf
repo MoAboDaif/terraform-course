@@ -63,6 +63,8 @@ module "calculator_server" {
     }
   }
 
+  user_data = file("${path.module}/scripts/user_data.sh")
+
   tags = local.tags
 
 }

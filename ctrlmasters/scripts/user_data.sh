@@ -27,5 +27,3 @@ systemctl enable mysql
 systemctl start mysql
 systemctl enable nginx
 systemctl start nginx
-
-
