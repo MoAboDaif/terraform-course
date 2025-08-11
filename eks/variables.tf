@@ -42,7 +42,6 @@ variable "private_subnets" {
 variable "tags" {
   type = map(string)
   default = {
-    Environment = "dev"
     Terraform   = "true"
   }
 }

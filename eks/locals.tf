@@ -2,7 +2,7 @@ locals {
   tags = merge(
     var.tags,
     {
-      workspace = terraform.workspace
+      Env = terraform.workspace
     }
   )
 }
